@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="straw-hat-pirates"
+run/main_scene="uid://bu28b15dh4ere"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.0
 
 [physics]
 
@@ -20,4 +25,5 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bu28b15dh4ere"]
+
+[ext_resource type="Script" uid="uid://cb4m52erntuy2" path="res://Scripts/character.gd" id="1_sxt04"]
+[ext_resource type="Texture2D" uid="uid://d3i7jdcrij7fh" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_35862"]
+[ext_resource type="Texture2D" uid="uid://bbfor7ox8p3cc" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="3_1lpgc"]
+[ext_resource type="Texture2D" uid="uid://3lyqaaydcp7m" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="4_p71m8"]
+[ext_resource type="Texture2D" uid="uid://bsgmuqg8aj0fb" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="5_tfchf"]
+[ext_resource type="Texture2D" uid="uid://ddm611l8aotup" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="6_865fu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32gsx"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1vub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_35862")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1lpgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p71m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tfchf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_865fu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Character" type="CharacterBody2D" unique_id=1040012520]
+script = ExtResource("1_sxt04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602839497]
+shape = SubResource("CapsuleShape2D_32gsx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1636485081]
+sprite_frames = SubResource("SpriteFrames_l1vub")
+animation = &"idle"
+frame = 2
+frame_progress = 0.98269665
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1656230928]
