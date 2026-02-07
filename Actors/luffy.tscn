@@ -2,33 +2,36 @@
 
 [ext_resource type="Texture2D" uid="uid://o4umwjpuwbfj" path="res://Assets/Monkey D. Luffy/Sprites/idle.png" id="1_sua5v"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sua5v"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(0, 0, 25, 34)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u04tb"]
 atlas = ExtResource("1_sua5v")
-region = Rect2(0, 0, 32, 50)
+region = Rect2(25, 0, 25, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je0nu"]
 atlas = ExtResource("1_sua5v")
-region = Rect2(32, 0, 32, 50)
+region = Rect2(50, 0, 25, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjlt6"]
 atlas = ExtResource("1_sua5v")
-region = Rect2(64, 0, 32, 50)
+region = Rect2(75, 0, 25, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywupj"]
 atlas = ExtResource("1_sua5v")
-region = Rect2(96, 0, 32, 50)
+region = Rect2(100, 0, 25, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1q4u8"]
 atlas = ExtResource("1_sua5v")
-region = Rect2(128, 0, 32, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v50go"]
-atlas = ExtResource("1_sua5v")
-region = Rect2(160, 0, 32, 50)
+region = Rect2(125, 0, 25, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tg5ww"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sua5v")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u04tb")
 }, {
@@ -43,9 +46,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1q4u8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v50go")
 }],
 "loop": true,
 "name": &"idle",
@@ -61,7 +61,7 @@ position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_tg5ww")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.30609116
+frame_progress = 0.03209903
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=762409186]
 
