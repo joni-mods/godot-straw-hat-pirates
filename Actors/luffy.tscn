@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://vgvg2htxwc3l"]
+
+[ext_resource type="Texture2D" uid="uid://o4umwjpuwbfj" path="res://Assets/Monkey D. Luffy/Sprites/idle.png" id="1_sua5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u04tb"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je0nu"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjlt6"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywupj"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q4u8"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(128, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50go"]
+atlas = ExtResource("1_sua5v")
+region = Rect2(160, 0, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tg5ww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u04tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je0nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjlt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywupj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q4u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v50go")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Luffy" type="Node2D" unique_id=1332612813]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2112760051]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1361458550]
+position = Vector2(1, 2)
+sprite_frames = SubResource("SpriteFrames_tg5ww")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.30609116
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=762409186]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1386427840]
