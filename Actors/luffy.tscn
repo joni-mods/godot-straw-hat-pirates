@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://vgvg2htxwc3l"]
 
+[ext_resource type="Script" uid="uid://cb4m52erntuy2" path="res://Scripts/character.gd" id="1_je0nu"]
 [ext_resource type="Texture2D" uid="uid://o4umwjpuwbfj" path="res://Assets/Monkey D. Luffy/Sprites/idle.png" id="1_sua5v"]
+[ext_resource type="Texture2D" uid="uid://utmnfnxpyin" path="res://Assets/Monkey D. Luffy/Sprites/run.png" id="2_u04tb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sua5v"]
 atlas = ExtResource("1_sua5v")
@@ -26,6 +28,38 @@ region = Rect2(100, 0, 25, 34)
 atlas = ExtResource("1_sua5v")
 region = Rect2(125, 0, 25, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50go"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(4, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5ww"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(41, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q8i3"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(78, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbevn"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(115, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0qw2"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(152, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjefp"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(189, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2wt6"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(226, 0, 37, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5nd1"]
+atlas = ExtResource("2_u04tb")
+region = Rect2(263, 0, 37, 51)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tg5ww"]
 animations = [{
 "frames": [{
@@ -49,20 +83,53 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 8.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v50go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg5ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q8i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbevn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0qw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjefp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2wt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5nd1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
 }]
 
-[node name="Luffy" type="Node2D" unique_id=1332612813]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sua5v"]
+height = 32.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2112760051]
+[node name="Luffy" type="CharacterBody2D" unique_id=2112760051]
+script = ExtResource("1_je0nu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1361458550]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1361458550]
 position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_tg5ww")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.03209903
+frame_progress = 0.41543946
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=762409186]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=762409186]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_sua5v")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1386427840]

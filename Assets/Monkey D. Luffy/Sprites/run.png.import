@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddhw53v0ux0x2"
-path="res://.godot/imported/idle-01.png-7d1b738e3430d2d058c9aaab438d995a.ctex"
+uid="uid://utmnfnxpyin"
+path="res://.godot/imported/run.png-9759c840208c0515b16dfdaace609e45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monkey D. Luffy/Sprites/idle-01.png"
-dest_files=["res://.godot/imported/idle-01.png-7d1b738e3430d2d058c9aaab438d995a.ctex"]
+source_file="res://Assets/Monkey D. Luffy/Sprites/run.png"
+dest_files=["res://.godot/imported/run.png-9759c840208c0515b16dfdaace609e45.ctex"]
 
 [params]
 
