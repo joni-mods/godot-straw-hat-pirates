@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://vgvg2htxwc3l"]
 
-[ext_resource type="Script" uid="uid://cb4m52erntuy2" path="res://Scripts/character.gd" id="1_je0nu"]
+[ext_resource type="Script" uid="uid://cb4m52erntuy2" path="res://Scripts/luffy.gd" id="1_je0nu"]
 [ext_resource type="Texture2D" uid="uid://o4umwjpuwbfj" path="res://Assets/Monkey D. Luffy/Sprites/idle.png" id="1_sua5v"]
 [ext_resource type="Texture2D" uid="uid://utmnfnxpyin" path="res://Assets/Monkey D. Luffy/Sprites/run.png" id="2_u04tb"]
+[ext_resource type="Texture2D" uid="uid://hon74t4gqn8e" path="res://Assets/Monkey D. Luffy/Sprites/fall.png" id="2_ywupj"]
 [ext_resource type="Texture2D" uid="uid://cgee5w773y6d1" path="res://Assets/Monkey D. Luffy/Sprites/jump.png" id="3_qjlt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sua5v"]
@@ -101,6 +102,14 @@ region = Rect2(263, 0, 37, 51)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_ywupj")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sua5v")
 }, {
 "duration": 1.0,
@@ -193,9 +202,8 @@ script = ExtResource("1_je0nu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1361458550]
 position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_tg5ww")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.47707665
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=762409186]
 position = Vector2(-1, 2)

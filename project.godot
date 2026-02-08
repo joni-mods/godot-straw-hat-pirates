@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="straw-hat-pirates"
-run/main_scene="uid://bu28b15dh4ere"
+run/main_scene="uid://nlh8vkxj6d0c"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/scale=3.0
+window/stretch/scale=2.0
 
 [input]
 

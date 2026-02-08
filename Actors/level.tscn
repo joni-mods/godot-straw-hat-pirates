@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://nlh8vkxj6d0c"]
+
+[ext_resource type="Texture2D" uid="uid://e4xcju0a45kw" path="res://icon.svg" id="1_0325d"]
+[ext_resource type="PackedScene" uid="uid://vgvg2htxwc3l" path="res://Actors/luffy.tscn" id="1_xr6p2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxy64"]
+size = Vector2(1228.5, 20)
+
+[node name="Level" type="Node2D" unique_id=1259318801]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=290550004]
+position = Vector2(-3, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1114036534]
+position = Vector2(579, 395)
+shape = SubResource("RectangleShape2D_pxy64")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1451458657]
+position = Vector2(578, 394)
+scale = Vector2(9.5, 0.16406232)
+texture = ExtResource("1_0325d")
+
+[node name="Luffy" parent="." unique_id=2112760051 instance=ExtResource("1_xr6p2")]
