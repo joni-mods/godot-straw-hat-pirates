@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://belvs6irc1avs"]
+
+[ext_resource type="Texture2D" uid="uid://ybvk2i6c2ei0" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 01.png" id="1_d11tw"]
+[ext_resource type="Texture2D" uid="uid://blrjpoudjhfe7" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 02.png" id="2_pso8g"]
+[ext_resource type="Texture2D" uid="uid://ct6vawgqe1aul" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 03.png" id="3_taxot"]
+[ext_resource type="Texture2D" uid="uid://dwqdyjbee47d5" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 04.png" id="4_gett2"]
+[ext_resource type="Texture2D" uid="uid://ly5agrg1ufah" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 05.png" id="5_bhmoj"]
+[ext_resource type="Texture2D" uid="uid://b8ifmx1t2gk3s" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 06.png" id="6_6q2vy"]
+[ext_resource type="Texture2D" uid="uid://301casv146m1" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 07.png" id="7_hoc3q"]
+[ext_resource type="Texture2D" uid="uid://fnraunn6pm2a" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 08.png" id="8_kn0l0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qexy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d11tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pso8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_taxot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gett2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bhmoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6q2vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hoc3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kn0l0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Sword" type="Node2D" unique_id=1779352455]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1302241741]
+sprite_frames = SubResource("SpriteFrames_qexy7")
+animation = &"idle"
