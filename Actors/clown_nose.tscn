@@ -48,34 +48,6 @@ height = 28.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_dupk1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_lannf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_kggth")
-}],
-"loop": false,
-"name": &"attack2",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_888m5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_t7db4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_isk0a")
-}],
-"loop": false,
-"name": &"attack3",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("1_w3mej")
 }],
 "loop": false,
@@ -206,6 +178,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_888m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t7db4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_isk0a")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_valxl")
 }, {
 "duration": 1.0,
@@ -216,6 +202,20 @@ animations = [{
 }],
 "loop": false,
 "name": &"stab",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dupk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lannf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kggth")
+}],
+"loop": false,
+"name": &"strike",
 "speed": 10.0
 }]
 
@@ -231,12 +231,12 @@ shape = SubResource("CapsuleShape2D_w3mej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102465372]
 sprite_frames = SubResource("SpriteFrames_8lnjp")
-animation = &"stab"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1087735079]
 
-[node name="StabArea" type="Area2D" parent="." unique_id=33187087]
+[node name="StabArea" type="Area2D" parent="." unique_id=33187087 groups=["FromPlayer"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StabArea" unique_id=1790177621]
 position = Vector2(21.5, 5)

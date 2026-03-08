@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bq0cb3fx38vwj"]
+
+[ext_resource type="Script" uid="uid://cknwm5vypc2g1" path="res://Scripts/barrel.gd" id="1_emnjm"]
+[ext_resource type="Texture2D" uid="uid://d13ei81bj480n" path="res://Assets/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="1_jqof0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emnjm"]
+size = Vector2(21, 22)
+
+[node name="Barrel" type="Node2D" unique_id=1334322457]
+script = ExtResource("1_emnjm")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=231052520]
+texture = ExtResource("1_jqof0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1622887123]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1134340727]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_emnjm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

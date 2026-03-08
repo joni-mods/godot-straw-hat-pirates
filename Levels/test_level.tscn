@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://6e633qkgbwab"]
 
 [ext_resource type="Texture2D" uid="uid://cykn5v8ivj8gv" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_00vsl"]
+[ext_resource type="PackedScene" uid="uid://bq0cb3fx38vwj" path="res://Actors/barrel.tscn" id="2_3158n"]
 [ext_resource type="PackedScene" uid="uid://diqrq88nswrpr" path="res://Actors/clown_nose.tscn" id="2_i4ak4"]
 [ext_resource type="PackedScene" uid="uid://belvs6irc1avs" path="res://Actors/sword.tscn" id="3_4k50d"]
 
@@ -351,6 +352,10 @@ tile_map_data = PackedByteArray("AADq//v/AAAIAAgAAADq//z/AAAIAAkAAADr//v/AAAJAAg
 tile_set = SubResource("TileSet_3158n")
 
 [node name="ClownNose" parent="." unique_id=1391800776 instance=ExtResource("2_i4ak4")]
+position = Vector2(16, 18)
+
+[node name="Barrel" parent="." unique_id=1334322457 instance=ExtResource("2_3158n")]
+position = Vector2(-24, 14)
 
 [node name="Sword" parent="." unique_id=1779352455 instance=ExtResource("3_4k50d")]
-position = Vector2(237, -13)
+position = Vector2(192, -11)

@@ -10,10 +10,15 @@ var isAttacking = false
 var toggleAttack = false
 
 func checkAttack():
-	if Input.is_action_just_pressed("ui_stab"):
+	if Input.is_action_just_pressed("ui_stab") || Input.is_action_just_pressed("ui_slash") || Input.is_action_just_pressed("ui_strike"):
 		isAttacking = true
 		$StabArea/CollisionShape2D.disabled = false
-		animation.play("stab")
+		if Input.is_action_just_pressed("ui_stab"):		
+			animation.play("stab")
+		elif Input.is_action_just_pressed("ui_slash"):
+			animation.play("slash")
+		elif Input.is_action_just_pressed("ui_strike"):
+			animation.play("strike")
 		if animation.flip_h:
 			$StabArea/CollisionShape2D.position.x *= -1
 			toggleAttack = true
