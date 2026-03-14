@@ -1,21 +1,106 @@
 [gd_scene format=3 uid="uid://bq0cb3fx38vwj"]
 
-[ext_resource type="Script" uid="uid://cknwm5vypc2g1" path="res://Scripts/barrel.gd" id="1_emnjm"]
-[ext_resource type="Texture2D" uid="uid://d13ei81bj480n" path="res://Assets/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="1_jqof0"]
+[ext_resource type="Texture2D" uid="uid://r24ldejkj8xl" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/1.png" id="1_gddja"]
+[ext_resource type="Texture2D" uid="uid://bbi13hta2p2x3" path="res://Assets/Merchant Ship/Sprites/Barrel/Idle/1.png" id="1_jqof0"]
+[ext_resource type="Script" uid="uid://cknwm5vypc2g1" path="res://Scripts/barrel.gd" id="1_qcsnw"]
+[ext_resource type="Texture2D" uid="uid://dxtyatujs7mk" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/2.png" id="2_qcsnw"]
+[ext_resource type="Texture2D" uid="uid://b8sm4trq5bs0m" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/3.png" id="3_gc28i"]
+[ext_resource type="Texture2D" uid="uid://c5pa2moprmtd6" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/4.png" id="4_4vrs5"]
+[ext_resource type="Texture2D" uid="uid://mg0mu1mot6vq" path="res://Assets/Merchant Ship/Sprites/Barrel/Destroyed/5.png" id="5_mghri"]
+[ext_resource type="Texture2D" uid="uid://b5ujqbyp651b7" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/1.png" id="6_efgxd"]
+[ext_resource type="Texture2D" uid="uid://j3a254hxnbkh" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/2.png" id="7_k17o6"]
+[ext_resource type="Texture2D" uid="uid://crumqrnoogluh" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/3.png" id="8_rp78a"]
+[ext_resource type="Texture2D" uid="uid://cs2wu5yvrusdh" path="res://Assets/Merchant Ship/Sprites/Barrel/Hit/4.png" id="9_epxvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emnjm"]
-size = Vector2(21, 22)
+size = Vector2(23, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emnjm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gddja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qcsnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gc28i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4vrs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mghri")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_efgxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k17o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rp78a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_epxvu")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jqof0")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_qcsnw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gc28i"]
+curve = SubResource("Curve_qcsnw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qcsnw"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.271
+velocity_pivot = Vector3(90, 90, 0)
+spread = 180.0
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 50, 0)
+scale_curve = SubResource("CurveTexture_gc28i")
 
 [node name="Barrel" type="Node2D" unique_id=1334322457]
-script = ExtResource("1_emnjm")
-
-[node name="Sprite" type="Sprite2D" parent="." unique_id=231052520]
-texture = ExtResource("1_jqof0")
+script = ExtResource("1_qcsnw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1622887123]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1134340727]
-position = Vector2(0.5, 5)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_emnjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1548038362]
+sprite_frames = SubResource("SpriteFrames_emnjm")
+animation = &"destroyed"
+autoplay = "idle"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1767622975]
+emitting = false
+amount = 5
+texture = ExtResource("5_mghri")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.68
+process_material = SubResource("ParticleProcessMaterial_qcsnw")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
