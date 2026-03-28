@@ -231,7 +231,7 @@ shape = SubResource("CapsuleShape2D_w3mej")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102465372]
 sprite_frames = SubResource("SpriteFrames_8lnjp")
-animation = &"jump"
+animation = &"stab"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1087735079]
