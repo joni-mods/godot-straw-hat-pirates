@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c2s6e162jmgan"]
+
+[ext_resource type="Script" uid="uid://f47suncaw711" path="res://Scripts/red_diamond.gd" id="1_yljwh"]
+[ext_resource type="Texture2D" uid="uid://5ebgvv584r8j" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="2_gcdep"]
+[ext_resource type="Texture2D" uid="uid://cqyklj7c28f8q" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/02.png" id="3_mwsva"]
+[ext_resource type="Texture2D" uid="uid://dha8p7or5vj35" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/03.png" id="4_5tiug"]
+[ext_resource type="Texture2D" uid="uid://rr57bkj77m5e" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/04.png" id="5_i30qh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxasq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gcdep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mwsva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5tiug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i30qh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hllkp"]
+size = Vector2(13, 13)
+
+[node name="RedDiamond" type="Node2D" unique_id=1452778804]
+script = ExtResource("1_yljwh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338866695]
+sprite_frames = SubResource("SpriteFrames_mxasq")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=375537311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1728870819]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_hllkp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
