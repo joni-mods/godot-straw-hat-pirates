@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bq0cb3fx38vwj" path="res://Actors/barrel.tscn" id="2_3158n"]
 [ext_resource type="PackedScene" uid="uid://diqrq88nswrpr" path="res://Actors/clown_nose.tscn" id="2_i4ak4"]
 [ext_resource type="PackedScene" uid="uid://belvs6irc1avs" path="res://Actors/sword.tscn" id="3_4k50d"]
-[ext_resource type="PackedScene" uid="uid://c2s6e162jmgan" path="res://Actors/red_diamond.tscn" id="3_3158n"]
-[ext_resource type="PackedScene" uid="uid://dtveh5wno8hbx" path="res://Actors/gold_coin.tscn" id="6_ub4j8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4ak4"]
 texture = ExtResource("1_00vsl")
@@ -359,21 +357,16 @@ tile_set = SubResource("TileSet_3158n")
 [node name="ClownNose" parent="." unique_id=1391800776 instance=ExtResource("2_i4ak4")]
 position = Vector2(16, 18)
 
-[node name="RedDiamond" parent="." unique_id=1452778804 instance=ExtResource("3_3158n")]
-position = Vector2(258, 6)
-
-[node name="Barrel" parent="." unique_id=1334322457 instance=ExtResource("2_3158n")]
-position = Vector2(-22, 16)
-
-[node name="Barrel2" parent="." unique_id=1917138411 instance=ExtResource("2_3158n")]
-position = Vector2(-98, 16)
-hp = 10
-
-[node name="Barrel3" parent="." unique_id=2144546329 instance=ExtResource("2_3158n")]
-position = Vector2(103, 16)
-
 [node name="Sword" parent="." unique_id=1779352455 instance=ExtResource("3_4k50d")]
 position = Vector2(176, 18)
 
-[node name="GoldCoin" parent="." unique_id=286695819 instance=ExtResource("6_ub4j8")]
-position = Vector2(279, 6)
+[node name="Barrels" type="Node" parent="." unique_id=484981759]
+
+[node name="Barrel" parent="Barrels" unique_id=1334322457 instance=ExtResource("2_3158n")]
+position = Vector2(-22, 16)
+
+[node name="Barrel2" parent="Barrels" unique_id=1917138411 instance=ExtResource("2_3158n")]
+position = Vector2(-98, 16)
+
+[node name="Barrel3" parent="Barrels" unique_id=2144546329 instance=ExtResource("2_3158n")]
+position = Vector2(103, 16)
