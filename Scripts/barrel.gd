@@ -3,7 +3,7 @@ extends Node2D
 @export var hp = 1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("FromPlayer"):
+	if area.is_in_group("AttackArea"):
 		hp -= 1
 		if hp > 0:
 			$AnimatedSprite2D.play("hit")
