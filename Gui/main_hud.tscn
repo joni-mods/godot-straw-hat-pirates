@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://frr1sfbs151p"]
 
+[ext_resource type="Script" uid="uid://2ei3jqojrdf0" path="res://scripts/main_hud.gd" id="1_tx0yf"]
 [ext_resource type="Texture2D" uid="uid://5ebgvv584r8j" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="1_x7kut"]
+[ext_resource type="Texture2D" uid="uid://b1aybbucp7xdx" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_h386a"]
 
 [node name="MainHUD" type="CanvasLayer" unique_id=1561679066]
+script = ExtResource("1_tx0yf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=523404931]
 anchors_preset = 1
@@ -25,3 +28,15 @@ text = "0"
 [node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer" unique_id=768477092]
 position = Vector2(-11, 14)
 texture = ExtResource("1_x7kut")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1638559761]
+layout_mode = 2
+
+[node name="GoldCoinsValue" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2" unique_id=330254107]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2" unique_id=299797147]
+position = Vector2(-11, 14)
+texture = ExtResource("2_h386a")

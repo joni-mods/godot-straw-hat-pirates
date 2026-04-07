@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cqyklj7c28f8q" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/02.png" id="3_mwsva"]
 [ext_resource type="Texture2D" uid="uid://dha8p7or5vj35" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/03.png" id="4_5tiug"]
 [ext_resource type="Texture2D" uid="uid://rr57bkj77m5e" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/04.png" id="5_i30qh"]
-[ext_resource type="PackedScene" uid="uid://bq0cb3fx38vwj" path="res://Actors/barrel.tscn" id="6_gcdep"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mxasq"]
 animations = [{
@@ -37,13 +36,12 @@ script = ExtResource("1_yljwh")
 sprite_frames = SubResource("SpriteFrames_mxasq")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.7016273
 
 [node name="Area2D" type="Area2D" parent="." unique_id=375537311]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1728870819]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_hllkp")
-
-[node name="Barrel" parent="." unique_id=1334322457 instance=ExtResource("6_gcdep")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
