@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://frr1sfbs151p"]
 
-[ext_resource type="Script" uid="uid://2ei3jqojrdf0" path="res://scripts/main_hud.gd" id="1_tx0yf"]
+[ext_resource type="Script" uid="uid://2ei3jqojrdf0" path="res://Scripts/main_hud.gd" id="1_tx0yf"]
 [ext_resource type="Texture2D" uid="uid://5ebgvv584r8j" path="res://Assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="1_x7kut"]
 [ext_resource type="Texture2D" uid="uid://b1aybbucp7xdx" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_h386a"]
 
