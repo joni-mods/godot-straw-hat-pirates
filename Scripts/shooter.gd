@@ -3,6 +3,7 @@ extends Node2D
 @export var minWaitTime = 2
 @export var maxWaitTime = 6
 @export var lookLeft = true
+@export var cannonBallSpeed = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,17 @@ func fire():
 	await get_tree().create_timer(0.2).timeout
 	$FireEffect.visible = true
 	$FireEffect.play("fire")
+	spawnProjectile()
 	await get_tree().create_timer(0.3).timeout
 	$FireEffect.visible = false
+	
+func spawnProjectile():
+	var p = preload("res://Actors/projectile.tscn").instantiate()
+	p.position = self.position
+	p.cannonBallSpeed = cannonBallSpeed
+	
+	if (lookLeft == false):
+		p.directionLeft = false
+	
+	get_parent().add_child(p)
 	
