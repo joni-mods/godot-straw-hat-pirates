@@ -36,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_lavs4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fire",
 "speed": 15.0
 }, {
@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_ocfkc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_51sxj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fire",
 "speed": 15.0
 }]

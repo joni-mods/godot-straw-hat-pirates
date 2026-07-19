@@ -374,11 +374,12 @@ position = Vector2(-74, 16)
 
 [node name="Shooter" parent="." unique_id=1673144625 instance=ExtResource("5_3158n")]
 position = Vector2(144, 16)
-minWaitTime = 1
-maxWaitTime = 2
-lookLeft = false
+cannonBallSpeed = 5
 
 [node name="Shooter2" parent="." unique_id=751401476 instance=ExtResource("5_3158n")]
-position = Vector2(299, 15)
-minWaitTime = 1
-maxWaitTime = 2
+position = Vector2(299, 16)
+lookLeft = true
+
+[node name="Shooter3" parent="." unique_id=161062388 instance=ExtResource("5_3158n")]
+position = Vector2(363, -16)
+lookLeft = true

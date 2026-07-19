@@ -2,8 +2,9 @@ extends Node2D
 
 @export var minWaitTime = 2
 @export var maxWaitTime = 6
-@export var lookLeft = true
-@export var cannonBallSpeed = 6
+@export var lookLeft = false
+@export var cannonBallSpeed = 3
+@export var cannonBallDamage = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +32,7 @@ func spawnProjectile():
 	var p = preload("res://Actors/projectile.tscn").instantiate()
 	p.position = self.position
 	p.cannonBallSpeed = cannonBallSpeed
-	
+	p.cannonBallDamage = cannonBallDamage
 	if (lookLeft == false):
 		p.directionLeft = false
 	

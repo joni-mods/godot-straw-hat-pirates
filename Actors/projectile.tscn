@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_gh7c2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"explosion",
 "speed": 15.0
 }, {
@@ -45,16 +45,28 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_gh7c2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iiosp"]
+radius = 7.0
 
 [node name="Projectile" type="Node2D" unique_id=674399152]
 script = ExtResource("1_5glv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1702624112]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.9375, 0.9375)
 sprite_frames = SubResource("SpriteFrames_nxb4q")
 animation = &"explosion"
 frame = 7
 frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1714794448]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2086215481]
+shape = SubResource("CircleShape2D_iiosp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
