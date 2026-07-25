@@ -5,6 +5,7 @@ extends Node2D
 @export var lookLeft = false
 @export var cannonBallSpeed = 3
 @export var cannonBallDamage = 1
+@export var range = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 		var waitTimer = randi_range(minWaitTime, maxWaitTime)
 		await get_tree().create_timer(waitTimer).timeout
 		fire()
+		
 
 func fire():
 	$Cannon.play("fire")
@@ -33,6 +35,8 @@ func spawnProjectile():
 	p.position = self.position
 	p.cannonBallSpeed = cannonBallSpeed
 	p.cannonBallDamage = cannonBallDamage
+	p.range = range
+
 	if (lookLeft == false):
 		p.directionLeft = false
 	
