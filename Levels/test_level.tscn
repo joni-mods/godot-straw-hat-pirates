@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bq0cb3fx38vwj" path="res://Actors/barrel.tscn" id="2_3158n"]
 [ext_resource type="PackedScene" uid="uid://diqrq88nswrpr" path="res://Actors/clown_nose.tscn" id="2_i4ak4"]
 [ext_resource type="PackedScene" uid="uid://belvs6irc1avs" path="res://Actors/sword.tscn" id="3_4k50d"]
-[ext_resource type="PackedScene" uid="uid://dnthkc4qdxe6y" path="res://Actors/shooter.tscn" id="5_3158n"]
+[ext_resource type="PackedScene" uid="uid://cb0qt83j3bubv" path="res://Actors/shooter_cannon.tscn" id="5_ub4j8"]
+[ext_resource type="PackedScene" uid="uid://bfygew6ld86oj" path="res://Actors/shooter_totem.tscn" id="6_pvdih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4ak4"]
 texture = ExtResource("1_00vsl")
@@ -372,10 +373,10 @@ position = Vector2(-98, 16)
 [node name="Barrel3" parent="Barrels" unique_id=2144546329 instance=ExtResource("2_3158n")]
 position = Vector2(-74, 16)
 
-[node name="Shooter1" parent="." unique_id=161062388 instance=ExtResource("5_3158n")]
-position = Vector2(363, -16)
+[node name="ShooterCannon" parent="." unique_id=1673144625 instance=ExtResource("5_ub4j8")]
+position = Vector2(361, -15)
 lookLeft = true
 
-[node name="Shooter2" parent="." unique_id=1673144625 instance=ExtResource("5_3158n")]
-position = Vector2(-180, 0)
+[node name="ShooterTotem" parent="." unique_id=154581521 instance=ExtResource("6_pvdih")]
+position = Vector2(-177, -1)
 projectileType = 1
