@@ -13,9 +13,9 @@ func _ready() -> void:
 	startX = self.position.x
 
 	if (type == 1):
-		print("totem spike shot")
+		$AnimatedSprite2D.play("idle_totem_spike")
 	else:
-		print("cannnon ball shot")
+		$AnimatedSprite2D.play("idle_cannon_ball")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,6 +36,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 func explode() -> void:
 	canMove = false
-	$AnimatedSprite2D.play("explosion")
+	if (type == 1):
+		$AnimatedSprite2D.play("explosion_totem_spike")
+	else:
+		$AnimatedSprite2D.play("explosion_cannon_ball")
 	await get_tree().create_timer(0.3).timeout
 	queue_free()
