@@ -6,6 +6,7 @@ extends Node2D
 @export var cannonBallSpeed = 3
 @export var cannonBallDamage = 1
 @export var range = 500
+@export var projectileType = Global.projectileTypes.CANNON_BALL
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +37,8 @@ func spawnProjectile():
 	p.cannonBallSpeed = cannonBallSpeed
 	p.cannonBallDamage = cannonBallDamage
 	p.range = range
-
+	p.type = projectileType
+	
 	if (lookLeft == false):
 		p.directionLeft = false
 	

@@ -6,10 +6,16 @@ var cannonBallDamage = 1
 var canMove = true
 var range = 500
 var startX = 0
+var type = Global.projectileTypes.CANNON_BALL
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	startX = self.position.x
+
+	if (type == 1):
+		print("totem spike shot")
+	else:
+		print("cannnon ball shot")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
