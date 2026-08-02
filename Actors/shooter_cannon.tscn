@@ -45,6 +45,6 @@ animations = [{
 
 [node name="ShooterCannon" unique_id=1673144625 instance=ExtResource("1_klown")]
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." index="1" unique_id=1751477005]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." index="0" unique_id=1751477005]
 sprite_frames = SubResource("SpriteFrames_8tmp6")
 animation = &"fire"

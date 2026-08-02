@@ -11,8 +11,7 @@ var type = Global.projectileTypes.CANNON_BALL
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	startX = self.position.x
-
-	if (type == 1):
+	if (type == Global.projectileTypes.TOTEM_SPIKE):
 		$AnimatedSprite2D.play("idle_totem_spike")
 	else:
 		$AnimatedSprite2D.play("idle_cannon_ball")
@@ -36,7 +35,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 func explode() -> void:
 	canMove = false
-	if (type == 1):
+	if (type == Global.projectileTypes.TOTEM_SPIKE):
 		$AnimatedSprite2D.play("explosion_totem_spike")
 	else:
 		$AnimatedSprite2D.play("explosion_cannon_ball")

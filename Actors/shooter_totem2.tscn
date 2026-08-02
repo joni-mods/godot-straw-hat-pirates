@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://4ukge7bypujp"]
+
+[ext_resource type="PackedScene" uid="uid://dnthkc4qdxe6y" path="res://Actors/shooter.tscn" id="1_fye17"]
+[ext_resource type="Texture2D" uid="uid://dssh3ylujkvxc" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/1.png" id="2_fye17"]
+[ext_resource type="Texture2D" uid="uid://ctpskqr6moe0a" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/2.png" id="3_kay3n"]
+[ext_resource type="Texture2D" uid="uid://clyp70vh6jln" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/3.png" id="4_ndnk5"]
+[ext_resource type="Texture2D" uid="uid://c7e64ti4r2i2k" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/4.png" id="5_17ols"]
+[ext_resource type="Texture2D" uid="uid://smgtfe67vydm" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/5.png" id="6_e8ddy"]
+[ext_resource type="Texture2D" uid="uid://c4yia3t5rp04q" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Attack 2/6.png" id="7_51hwv"]
+[ext_resource type="Texture2D" uid="uid://dxhepgg3psx0u" path="res://Assets/Shooter Traps/Sprites/Totems/Head 2/Idle 2/1.png" id="8_0lhxi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tmp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fye17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kay3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ndnk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_17ols")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e8ddy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_51hwv")
+}],
+"loop": 0,
+"name": &"fire",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0lhxi")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="ShooterTotem2" unique_id=1673144625 instance=ExtResource("1_fye17")]
+position = Vector2(0, 2)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." index="0" unique_id=1751477005]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_8tmp6")
+animation = &"fire"
