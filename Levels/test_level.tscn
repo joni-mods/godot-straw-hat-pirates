@@ -354,16 +354,13 @@ sources/0 = SubResource("TileSetAtlasSource_i4ak4")
 [node name="TestLevel" type="Node2D" unique_id=91486311]
 
 [node name="ClownNose" parent="." unique_id=1391800776 instance=ExtResource("2_i4ak4")]
-position = Vector2(16, 18)
+position = Vector2(353, -17)
 
 [node name="Crabby" parent="." unique_id=1427911129 instance=ExtResource("9_4t6x8")]
 position = Vector2(505, 1)
 
-[node name="Crabby2" parent="." unique_id=1785648514 instance=ExtResource("9_4t6x8")]
-position = Vector2(662, 1)
-
 [node name="Sword" parent="." unique_id=1779352455 instance=ExtResource("3_4k50d")]
-position = Vector2(74, 17)
+position = Vector2(445, 5)
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=640483243]
 use_parent_material = true
@@ -383,7 +380,7 @@ position = Vector2(-98, 16)
 position = Vector2(-74, 16)
 
 [node name="ShooterCannon" parent="." unique_id=1673144625 instance=ExtResource("5_ub4j8")]
-position = Vector2(361, -15)
+position = Vector2(323, -1)
 lookLeft = true
 
 [node name="ShooterTotem2" parent="." unique_id=1686600645 instance=ExtResource("7_pvdih")]

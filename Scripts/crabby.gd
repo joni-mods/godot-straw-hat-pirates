@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-
-const SPEED = 150.0
+const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
+@export var hp : =3
 var direction := 1
 
 func _physics_process(delta: float) -> void:
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		if direction == 1:
 			$AnimatedSprite2D.flip_h = true
 			velocity.x = direction * SPEED
-		else:
+		elif direction == -1:
 			$AnimatedSprite2D.flip_h = false
 			velocity.x = direction * SPEED
 			
@@ -26,3 +26,13 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("run")
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("AttackArea"):
+		hp -= 1
+		direction = 0
+		$AnimatedSprite2D.play("hit")
+		print("args array")
+		await $AnimatedSprite2D.animation_finished
+		direction = 1
