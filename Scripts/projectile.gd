@@ -8,7 +8,6 @@ var range = 500
 var startX = 0
 var type = Global.projectileTypes.CANNON_BALL
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	startX = self.position.x
 	if (type == Global.projectileTypes.TOTEM_SPIKE):
@@ -16,7 +15,6 @@ func _ready() -> void:
 	else:
 		$AnimatedSprite2D.play("idle_cannon_ball")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if canMove:
 		if(directionLeft):

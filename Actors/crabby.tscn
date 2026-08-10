@@ -38,6 +38,7 @@ animations = [{
 }]
 
 [node name="Crabby" type="CharacterBody2D" unique_id=1427911129]
+collision_layer = 2
 script = ExtResource("1_i6pg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=994291634]

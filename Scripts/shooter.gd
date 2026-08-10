@@ -9,7 +9,6 @@ extends Node2D
 @export var projectileType = Global.projectileTypes.CANNON_BALL
 @export var fireEffect = true
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(lookLeft == false):
 		$AnimatedSprite.flip_h = true

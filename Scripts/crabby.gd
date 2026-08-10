@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		if is_on_wall():
-			print("autsch!")
 			direction *= -1
 		
 		if direction == 1:
