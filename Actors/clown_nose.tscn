@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_w3mej")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -59,7 +59,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_4qfkw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fall_sword",
 "speed": 5.0
 }, {
@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_rtk2r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 8.0
 }, {
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_u8iab")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_sword",
 "speed": 8.0
 }, {
@@ -113,7 +113,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_1s2xg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_023gf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump_sword",
 "speed": 8.0
 }, {
@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_we6f4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 8.0
 }, {
@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("31_isk0a")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run_sword",
 "speed": 8.0
 }, {
@@ -187,7 +187,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_isk0a")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash",
 "speed": 10.0
 }, {
@@ -201,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_u8iab")
 }],
-"loop": false,
+"loop": 0,
 "name": &"stab",
 "speed": 10.0
 }, {
@@ -215,7 +215,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_kggth")
 }],
-"loop": false,
+"loop": 0,
 "name": &"strike",
 "speed": 10.0
 }]

@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 @export var hp : =3
 var direction := 1
 var isDead := false
+var playerInDamageZone = false
 
 func _ready():
 	checkStatus()
@@ -50,7 +51,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		hp -= 1
 		direction = 0
 		$AnimatedSprite2D.play("hit")
-		print("urgh")
+		print("die!")
 		await get_tree().create_timer(1).timeout
 		direction = 1
+		checkStatus()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if !isDead and body.is_in_group("Player"):
+		print("danger!")
+		playerInDamageZone = true
 		checkStatus()

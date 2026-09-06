@@ -4,16 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://g74pmhsoks6e" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="1_totry"]
 [ext_resource type="Texture2D" uid="uid://dduernimwsafg" path="res://Assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 01.png" id="2_cs0w5"]
 [ext_resource type="Texture2D" uid="uid://cvkhyb1lskahs" path="res://Assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 01.png" id="2_ex6d3"]
+[ext_resource type="Texture2D" uid="uid://csmhlijql7xqp" path="res://Assets/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 01.png" id="2_hhxek"]
 [ext_resource type="Texture2D" uid="uid://bu4iiyxdfvw2d" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="2_i6pg2"]
 [ext_resource type="Texture2D" uid="uid://cocn0y24nbl5h" path="res://Assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 02.png" id="3_i0x4t"]
+[ext_resource type="Texture2D" uid="uid://bmpxl0qh2xs4m" path="res://Assets/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 02.png" id="3_kl5xu"]
 [ext_resource type="Texture2D" uid="uid://ftuswg3ynsfi" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="3_x0ise"]
 [ext_resource type="Texture2D" uid="uid://d24ae2y4shi1i" path="res://Assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 02.png" id="3_yasrg"]
+[ext_resource type="Texture2D" uid="uid://bsw4p83in5f3e" path="res://Assets/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 03.png" id="4_atq61"]
 [ext_resource type="Texture2D" uid="uid://xxvmxchbiajm" path="res://Assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 03.png" id="4_dyxxn"]
 [ext_resource type="Texture2D" uid="uid://bx85wu144m8xc" path="res://Assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 03.png" id="4_im1l4"]
 [ext_resource type="Texture2D" uid="uid://bpyr757cpi34p" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="4_n0amx"]
 [ext_resource type="Texture2D" uid="uid://bjmbkd88kdwmx" path="res://Assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 04.png" id="5_0c1i8"]
 [ext_resource type="Texture2D" uid="uid://c7elvsxc1dv2e" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="5_b3jxv"]
 [ext_resource type="Texture2D" uid="uid://dfqhvq2vws7bd" path="res://Assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 04.png" id="5_kjboe"]
+[ext_resource type="Texture2D" uid="uid://bwk3dkreavsxv" path="res://Assets/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 04.png" id="5_rjtfm"]
 [ext_resource type="Texture2D" uid="uid://da6h3py10f0y1" path="res://Assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="6_ex6d3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iiosp"]
@@ -21,6 +25,23 @@ height = 26.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iiosp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hhxek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kl5xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_atq61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rjtfm")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cs0w5")
@@ -80,7 +101,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiosp"]
-size = Vector2(38.5, 20)
+size = Vector2(40, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcqdf"]
+size = Vector2(67, 12.5)
 
 [node name="Crabby" type="CharacterBody2D" unique_id=1427911129]
 collision_layer = 2
@@ -91,12 +115,18 @@ shape = SubResource("CapsuleShape2D_iiosp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1601101655]
 sprite_frames = SubResource("SpriteFrames_iiosp")
-animation = &"death"
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2028920510]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=656904185]
+[node name="HitShape2D" type="CollisionShape2D" parent="Area2D" unique_id=656904185]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_iiosp")
+
+[node name="AttackShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2058207140]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_lcqdf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
